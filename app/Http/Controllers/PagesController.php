@@ -11,6 +11,6 @@ class PagesController extends Controller
     }
 
     public function login(){
-        return view('pages.user.dashboard');
+        return view('user.dashboard');
     }
 }

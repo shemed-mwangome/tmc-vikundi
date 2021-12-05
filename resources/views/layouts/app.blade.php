@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="{{ asset('images/coat_of_arms.png') }}" type="image/x-icon">
 </head>
 <body class="bg-gray-100">
-    @include('includes.header')
     @yield('content')
 </body>
 </html>
