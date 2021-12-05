@@ -13,4 +13,8 @@ class PagesController extends Controller
     public function login(){
         return view('user.dashboard');
     }
+
+    public function logout(){
+        return redirect('/');
+    }
 }

@@ -18,3 +18,5 @@ Route::get('/', [PagesController::class, 'index']);
 
 Route::get('login', [PagesController::class, 'login'])->name('dashboard');
 
+Route::get('logout', [PagesController::class, 'logout'])->name('logout');
+
