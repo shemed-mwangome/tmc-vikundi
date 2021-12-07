@@ -6,15 +6,22 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('index');
     }
 
-    public function login(){
+    public function login()
+    {
         return view('user.dashboard');
     }
 
-    public function logout(){
+    public function dashboard(){
+        return view('user.dashboard');
+    }
+
+    public function logout()
+    {
         return redirect('/');
     }
 }

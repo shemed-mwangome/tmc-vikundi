@@ -51,54 +51,13 @@
         </div>
         {{-- end top navigation --}}
 
-
-        {{-- Dashboard --}}
-
-        <div class="container max-w-screen mx-auto my-8">
-            <div class="modules mx-auto grid grid-cols-4 gap-x-2 gap-y-8 max-w-4xl  ">
-                <div class="w-48 h-48 bg-green-500  shadow-md rounded-md overflow-hidden hover:shadow-xl">
-                    <div class="text-white p-8 flex items-center justify-center text-5xl"><i class="fas fa-users "
-                            aria-hidden="true"></i></div>
-                    <div>
-                        <a href="/register"
-                            class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Usajili</a>
-                    </div>
-                </div>
-                <div class="w-48 h-48 bg-green-500 shadow-md rounded-md overflow-hidden hover:shadow-xl">
-                    <div class="text-white p-8 flex items-center justify-center text-5xl"><i
-                            class="fas fa-money-bill-alt"></i></div>
-                    <div>
-                        <a href="/loan"
-                            class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Mikopo</a>
-                    </div>
-                </div>
-                <div class="w-48 h-48 bg-green-500 shadow-md rounded-md overflow-hidden hover:shadow-xl">
-                    <div class="text-white p-8 flex items-center justify-center text-5xl"><i
-                            class="fas fa-hand-holding-usd"></i></div>
-                    <div>
-                        <a href="/account"
-                            class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Marejesho</a>
-                    </div>
-                </div>
-                <div class="w-48 h-48 bg-green-500 shadow-md rounded-md overflow-hidden hover:shadow-xl">
-                    <div class="text-white p-8 flex items-center justify-center text-5xl"><i
-                            class="fas fa-file-invoice"></i></div>
-                    <div>
-                        <a href="/report"
-                            class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Report</a>
-                    </div>
-                </div>
-                <div class="w-48 h-48 bg-green-500 shadow-md rounded-md overflow-hidden hover:shadow-xl">
-                    <div class="text-white p-8 flex items-center justify-center text-5xl"><i class="fas fa-cogs"></i>
-                    </div>
-                    <div>
-                        <a href="/setting"
-                            class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Setting</a>
-                    </div>
-                </div>
+        <div class="sidenav w-1/5 bg-red-400 h-screen">
+            <div class="p-8 text-center font-bold text-lg uppercase">
+                <a href="/dashboard"><i class="fas fa-home"></i> Dashboard</a>
             </div>
         </div>
-        {{-- end Dashboard --}}
+
+
     </div>
     <script>
         window.addEventListener("DOMContentLoaded", () => {
