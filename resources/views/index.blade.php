@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="{{ asset('images/coat_of_arms.png') }}" type="image/x-icon">
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-green-200">
     <div class="wrapper">
 
         <header class="flex justify-between items-center py-2 px-4 bg-green-600">
