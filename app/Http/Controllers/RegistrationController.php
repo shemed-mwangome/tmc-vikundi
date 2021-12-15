@@ -16,7 +16,7 @@ class RegistrationController extends Controller
         return view('registration.index');
     }
 
-    /**
+       /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

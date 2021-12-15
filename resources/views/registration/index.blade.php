@@ -1,78 +1,187 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('layouts.topnav')
 
 
-    <div class="min-h-screen flex relative">
-        {{-- side nav --}}
+    <div class="wrapper h-screen flex overflow-hidden">
+
+        {{-- side navigation --}}
         <div
-            class="sidenav bg-gray-800 w-1/5 fixed inset-x-0 h-full space-y-0 transform  transition duration-200 ease-in-out ">
-            <div class="px-4 pt-8 pb-6 font-bold text-lg uppercase text-gray-100">
-                <a href="/dashboard" class="space-x-2">
-                    <i class="fas fa-home"></i>
-                    <small>HOME</small>
+            class="sidenav bg-gray-800 inset-x-0 space-y-0 transform  transition duration-200 ease-in-out w-64  shadow-md sticky top-0">
+            <div class="px-4 pt-8 pb-6 bg-gray-700 mb-3">
+                <a href="/dashboard" class="flex items-center font-bold text-gray-200 space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span class="text-sm">MWANZO</span>
                 </a>
             </div>
 
             {{-- links --}}
-            <nav class="text-gray-100">
-                <ul>
-                    <li>
-                        <a href="" class="px-4 py-2 transition duration-200 ease-in-out block hover:bg-gray-900 space-x-2">
-                            <i class="fas fa-home"></i>
-                            <small>Dashboard</small>
-                        </a>
-                    </li>
-                    <li class="w-full">
-                        <a href=""
-                            class=" px-4 py-2 transition duration-200 ease-in-out block hover:bg-gray-900 space-x-2 toggle-caret ">
-                            <i class="fas fa-users"></i>
-                            <small>Vikundi</small>
-                            <i class="fas fa-caret-right"></i>
-                        </a>
-                        <ul class="px-16 w-full bg-gray-900 hidden">
-                            <li>
-                                <a href="" class="">
-                                    <small>Tafuta</small>
-                                </a>
-                            </li>
 
-                            <li>
-                                <a href="" class="">
-                                    <small>Tafuta</small>
-                                </a>
-                            </li>
+            @include('registration.links')
 
-                            <li>
-                                <a href="" class="">
-                                    <small>Tafuta</small>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href=""
-                            class=" px-4 py-2 transition duration-200 ease-in-out block hover:bg-gray-900 space-x-2 toggle-caret ">
-                            <i class="fas fa-file-pdf"></i>
-                            <small>Report</small>
-                        </a>
-
-                    </li>
-
-
-                </ul>
-            </nav>
             {{-- end links --}}
-        </div>
-        {{-- end side nav --}}
-
-        {{-- main contet --}}
-        <div class="flex-1 bg-green-200">
 
         </div>
-        {{-- end main content --}}
+        {{-- end sidebar --}}
+
+        {{-- scroll wrapper --}}
+        <div class="flex-1 flex overflow-hidden ">
+
+            {{-- scroll content --}}
+            <div class="flex-1  px-8 py-6">
+                <div class="space-y-2">
+                    <div class="content p-2 shadow-md bg-white rounded-sm">
+                        <h1 class="uppercase font-bold text-sm">DASHBOARD</h1>
+                    </div>
+
+                    <div class="form shadow-md px-8 py-4 bg-white w-full">
+                        <form action="" class="grid grid-cols-3 gap-y-5 gap-x-5">
+                            <div class="space-y-2 col-span-2 ">
+                                <label for="group_name" class="block font-medium text-sm text-gray-600">Jina la
+                                    Kikundi</label>
+                                <input type="text" name="group_name" id="group_name"
+                                    class=" w-full border-gray-400 text-sm">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-1">
+                                <label for="group_activity" class="block font-medium text-sm text-gray-600">Shughuli za
+                                    Kikundi
+                                </label>
+                                <select name="group_activity" id="group_activity" class="w-full text-sm">
+                                    <option value="" selected disabled>Chagua Shughuli za kikundi</option>
+                                    <option value="">Kusaidiana</option>
+                                    <option value="">Wanawake</option>
+                                    <option value="">Vijana</option>
+                                    <option value="">Wanaume</option>
+                                    <option value="">Machanganyiko</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="group_category" class="block font-medium text-sm text-gray-600">Aina ya Kikundi
+                                </label>
+                                <select name="group_category" id="group_category" class="w-full text-sm">
+                                    <option value="" selected disabled>Chagua Aina ya Kikundi</option>
+                                    <option value="">Walemavu</option>
+                                    <option value="">Wanawake</option>
+                                    <option value="">Vijana</option>
+                                    <option value="">Wanaume</option>
+                                    <option value="">Machanganyiko</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-1">
+                                <label for="ward_name" class="block font-medium text-sm text-gray-600">Kata </label>
+                                <select name="ward_name" id="ward_name" class="w-full text-sm">
+                                    <option value="" selected disabled>Chagua Kata</option>
+                                    <option value="">Azimio</option>
+                                    <option value="">Kijichi</option>
+                                    <option value="">Buza</option>
+                                    <option value="">Mbagala</option>
+                                    <option value="">Sandali</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="street_name" class="block font-medium text-sm text-gray-600">Mtaa </label>
+                                <select name="street_name" id="street_name" class="w-full text-sm">
+                                    <option value="" selected disabled>Chagua Mtaa</option>
+                                    <option value="">Azizi</option>
+                                    <option value="">Azizi</option>
+                                    <option value="">Azizi</option>
+                                    <option value="">Azizi</option>
+                                    <option value="">Azizi</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-1">
+                                <label for="submission_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Kuleta
+                                    Katiba</label>
+                                <input type="date" name="submission_date" id="submission_date" class="w-full text-sm">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-1">
+                                <label for="receipt_no" class="block font-medium text-sm text-gray-600">Namba Ya
+                                    Malipo</label>
+                                <input type="text" name="receipt_no" id="receipt_no" class="w-full text-sm">
+                            </div>
+
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+                            <div class="space-y-2 col-span-1 col-start-2">
+                                <label for="payment_date" class="block font-medium text-sm text-gray-600">Tarehe ya
+                                    Malipo</label>
+                                <input type="text" name="payment_date" id="payment_date" class="w-full text-sm"
+                                    placeholder="Chagua Tarehe">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
+
+    @include('registration.scripts')
+
 @endsection
