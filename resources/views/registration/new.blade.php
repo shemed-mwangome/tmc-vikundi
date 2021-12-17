@@ -30,88 +30,88 @@
         {{-- end sidebar --}}
 
         {{-- scroll wrapper --}}
-        <div class="flex-1 flex overflow-hidden ">
+        <div class="flex-1 flex overflow-auto pb-8 ">
 
             {{-- scroll content --}}
             <div class="flex-1 px-8 py-6">
-                <div class="space-y-2">
+                <div class="space-y-2 pb-12">
                     <div class="content p-2 shadow-md bg-white rounded-sm">
-                        <h1 class="uppercase font-bold text-sm">VIKUNDI VILIVYOSAJILIWA</h1>
+                        <h1 class="uppercase font-bold text-sm">TAARIFA YA KIKUNDI</h1>
                     </div>
-                    <div class="shadow-md p-4 bg-white">
-                        <div>
-                            <form action="" class=" flex items-center justify-center space-x-4">
-                                <div>
-                                    <input type="text" name="search" id="search" class="w-80 text-sm"
-                                        placeholder="Jina au namba ya usajili">
-                                </div>
-                                <div>
-                                    <button
-                                        class="py-2 px-4 bg-sky-600 text-white hover:bg-sky-700 flex items-center space-x-2">
-                                        <span>Tafuta</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </form>
+                    <div class="px-8 py-4 bg-white rounded-sm ">
+                        <div class="content space-y-4 ">
+                            <div class="form px-8 py-4 bg-white rounded-sm">
+                                <form action="" class="w-4/5 space-y-6">
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="group_name" class="inline-block ">Jina la Kikundi</label>
+                                        <input type="text" class="col-span-2" id="group_name">
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="ward" class="inline-block ">Kata</label>
+                                        <select name="ward" id="ward" class="col-span-2">
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                        </select>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="street" class="inline-block ">Mtaa</label>
+                                        <select name="street" id="street" class="col-span-2">
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                        </select>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="category" class="inline-block ">Aina ya Kikundi</label>
+                                        <select name="category" id="category" class="col-span-2">
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                        </select>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="category" class="inline-block ">Shughuli za Kikundi</label>
+                                        <select name="category" id="category" class="col-span-2">
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                            <option value="">Azimio</option>
+                                        </select>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="submission_date" class="inline-block ">Tarehe ya kuleta katiba</label>
+                                        <input type="date" class="col-span-2" id="submission_date">
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="receipt_no " class="inline-block ">Namba ya malipo</label>
+                                        <input type="text" class="col-span-2" id="recepit_no">
+                                    </div>
+
+                                    <div class="grid grid-cols-3 gap-6 items-baseline">
+                                        <label for="submission_date" class="inline-block ">Tarehe ya Malipo </label>
+                                        <input type="date" class="col-span-2" id="pay_date">
+                                    </div>
+
+                                    <div class="grid grid-cols-3 gap-4">
+                                        <button type="submit"
+                                            class="uppercase col-start-2 bg-emerald-600 font-bold text-white hover:bg-sky-700 px-4 py-3">Save</button>
+                                    </div>
+
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="shadow-md px-8 py-4 bg-white w-full">
-                        <table class="w-full text-center">
-                            <thead class="bg-gray-300 divide-y divide-gray-500">
-                                <tr class="whitespace-nowrap">
-                                    <th class="px-6 py-2 text-sm text-gray-600">Jina </th>
-                                    <th class="px-6 py-2 text-sm text-gray-600">Usajili </th>
-                                    <th class="px-6 py-2 text-sm text-gray-600">Tarehe ya Usajili </th>
-                                    <th class="px-6 py-2 text-sm text-gray-600">Idadi ya Wanachama</th>
-                                    <th class="px-6 py-2 text-sm text-gray-600"></th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y bg-white border-b-2 border-gray-300">
-                                <tr class="whitespace-nowrap align-baseline">
-                                    <td class="px-6 py-2 text-xs">Tupendane Empowerment</td>
-                                    <td class="px-6 py-2 text-xs">TMC/2030/202</td>
-                                    <td class="px-6 py-2 text-xs">19/1/2017</td>
-                                    <td class="px-6 py-2 text-xs">10</td>
-                                    <td class="px-6 py-2 text-xs flex space-x-4 justify-between">
 
-                                        <a href="#" title="view">
-
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-600" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                            </svg>
-                                        </a>
-                                        <a href="#" title="edit">
-
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                            </svg>
-                                        </a>
-                                    </td>
-                                </tr>
-
-
-
-                            </tbody>
-                        </table>
-                        {{-- pagination here --}}
                     </div>
                 </div>
             </div>
+
+
         </div>
 
+        @include('registration.scripts')
 
-    </div>
-
-    @include('registration.scripts')
-
-@endsection
+    @endsection

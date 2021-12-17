@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="bg-slate-200 min-h-screen overflow-hidden">
+    <div class="bg-slate-200 min-h-screen overflow-hidden ">
 
         @yield('content')
 

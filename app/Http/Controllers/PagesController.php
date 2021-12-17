@@ -38,6 +38,10 @@ class PagesController extends Controller
     {
         return view('registration.search');
     }
+    public function reg_view()
+    {
+        return view('registration.view');
+    }
     public function reg_new()
     {
         return view('registration.new');
@@ -53,6 +57,13 @@ class PagesController extends Controller
     public function reg_report()
     {
         return view('registration.report');
+    }
+
+    public function reg_member(){
+        return view("registration.member");
+    }
+    public function reg_attach(){
+        return view("registration.attach");
     }
 
 

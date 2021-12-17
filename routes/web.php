@@ -30,12 +30,14 @@ Route::get('logout', [PagesController::class, 'logout'])->name('logout');
 // Registrations
 Route::get('/registration/dashboard', [PagesController::class, 'reg_dashboard']);
 Route::get('/registration/all', [PagesController::class, 'reg_all']);
+Route::get('/registration/view', [PagesController::class, 'reg_view']);
 Route::get('/registration/search', [PagesController::class, 'reg_search']);
 Route::get('/registration/new', [PagesController::class, 'reg_new']);
 Route::get('/registration/uploads', [PagesController::class, 'reg_uploads']);
 Route::get('/registration/certificate', [PagesController::class, 'reg_certificate']);
 Route::get('/registration/report', [PagesController::class, 'reg_report']);
-
+Route::get('/registration/member', [PagesController::class, 'reg_member']);
+Route::get('/registration/attach', [PagesController::class, 'reg_attach']);
 
 
 
