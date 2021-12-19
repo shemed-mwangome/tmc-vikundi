@@ -31,9 +31,9 @@
             </button>
             <nav
                 class="avatar-nav w-52 bg-green-600 text-gray-100 absolute right-0 my-2 text-sm hidden space-y-1 overflow-hidden rounded-sm transition duration-500 ease-in-out shadow-xl">
-                <a href="#" class="block px-3 py-2 hover:bg-gray-500 hover:text-gray-200">Akaunti Yangu</a>
+                <a href="#" class="block px-3 py-2 hover:bg-gray-500 hover:text-gray-200">My Account</a>
                 <a href="{{ route('logout') }}"
-                    class="block px-3 py-2 hover:bg-gray-500 hover:text-gray-200">Toka</a>
+                    class="block px-3 py-2 hover:bg-gray-500 hover:text-gray-200">Logout</a>
             </nav>
         </div>
     </div>

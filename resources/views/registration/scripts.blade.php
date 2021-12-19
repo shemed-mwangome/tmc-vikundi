@@ -4,6 +4,7 @@
         const avatar_nav = document.querySelector(".avatar-nav");
         const btn_toggle_sidenav = document.querySelector('.toggle-sidenav');
         const sidenav = document.querySelector('.sidenav');
+         const mainContent = document.querySelector('.main_content');
 
 
         const toggleRightNav = () => {
@@ -12,6 +13,7 @@
 
         const toggleSideNav = () => {
             sidenav.classList.toggle("-translate-x-full")
+            sidenav.classList.toggle("hidden")
         }
 
         btn_toggle_nav.addEventListener("click", toggleRightNav);

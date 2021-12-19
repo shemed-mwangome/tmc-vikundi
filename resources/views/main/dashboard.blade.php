@@ -11,7 +11,7 @@
                 </div>
                 <div>
                     <a href="/registration/dashboard"
-                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Usajili
+                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Registration
                     </a>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 </div>
                 <div>
                     <a href="/loans"
-                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Mikopo</a>
+                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Loans</a>
                 </div>
             </div>
             <div class="w-48 h-48 bg-green-600 shadow-md rounded-md overflow-hidden hover:shadow-xl">
@@ -28,7 +28,7 @@
                         class="fas fa-hand-holding-usd"></i></div>
                 <div>
                     <a href="/accounting"
-                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Marejesho</a>
+                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Accounts</a>
                 </div>
             </div>
             <div class="w-48 h-48 bg-green-600 shadow-md rounded-md overflow-hidden hover:shadow-xl">
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <a href="/reporting"
-                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Report</a>
+                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Reports</a>
                 </div>
             </div>
             <div class="w-48 h-48 bg-green-600 shadow-md rounded-md overflow-hidden hover:shadow-xl">
@@ -45,8 +45,8 @@
                     <i class="fas fa-cogs"></i>
                 </div>
                 <div>
-                    <a href="/settings"
-                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Setting</a>
+                    <a href="/setting/dashboard"
+                        class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Settings</a>
                 </div>
             </div>
         </div>

@@ -16,7 +16,8 @@ class PagesController extends Controller
         return view('main.dashboard');
     }
 
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('main.dashboard');
     }
 
@@ -59,14 +60,41 @@ class PagesController extends Controller
         return view('registration.report');
     }
 
-    public function reg_member(){
+    public function reg_member()
+    {
         return view("registration.member");
     }
-    public function reg_attach(){
+    public function reg_attach()
+    {
         return view("registration.attach");
     }
 
 
 
+    // Settings
 
+    public function set_dashboard()
+    {
+        return view('setting.index');
+    }
+    public function set_ward()
+    {
+        return view('setting.ward');
+    }
+    public function set_street()
+    {
+        return view('setting.street');
+    }
+    public function set_activity()
+    {
+        return view('setting.activity');
+    }
+    public function set_category()
+    {
+        return view('setting.category');
+    }
+    public function set_user()
+    {
+        return view('setting.user');
+    }
 }

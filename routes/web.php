@@ -40,6 +40,14 @@ Route::get('/registration/member', [PagesController::class, 'reg_member']);
 Route::get('/registration/attach', [PagesController::class, 'reg_attach']);
 
 
+// Setting
+Route::get('/setting/dashboard', [PagesController::class, 'set_dashboard']);
+Route::get('/setting/ward', [PagesController::class, 'set_ward']);
+Route::get('/setting/street', [PagesController::class, 'set_street']);
+Route::get('/setting/activity', [PagesController::class, 'set_activity']);
+Route::get('/setting/category', [PagesController::class, 'set_category']);
+Route::get('/setting/user', [PagesController::class, 'set_user']);
+
 
 
 
