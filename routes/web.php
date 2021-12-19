@@ -1,12 +1,17 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LoanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\StreetController;
+use App\Http\Controllers\WardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,19 +58,14 @@ Route::get('/setting/user', [PagesController::class, 'set_user']);
 
 
 
-Route::get('/loans/all', [PagesController::class, 'all']);
-Route::get('/accounting/all', [PagesController::class, 'all']);
-Route::get('/reporting/all', [PagesController::class, 'all']);
-Route::get('/settings/all', [PagesController::class, 'all']);
-
 
 
 
 // Controller resources
 
 
-Route::resource('register', RegistrationController::class);
-Route::resource('loan', LoanController::class);
-Route::resource('account', AccountController::class);
-Route::resource('report', ReportController::class);
-Route::resource('setting', SettingController::class);
+Route::resource('/setting/wards', WardController::class);
+Route::resource('/setting/streets', StreetController::class);
+Route::resource('/setting/activity', ActivityController::class);
+Route::resource('/setting/category', CategoryController::class);
+Route::resource('/registration/groups', GroupController::class);

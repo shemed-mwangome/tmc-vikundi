@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
-class AccountController extends Controller
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,10 @@ class AccountController extends Controller
      */
     public function index()
     {
-        //
-        return view('registration.index');
+
+        $activity = Activity::paginate(10);
+
+        return view('setting.activity')->with('activity', $activity);
     }
 
     /**
@@ -35,7 +38,15 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'activity' => 'required|string'
+        ]);
+
+        Activity::create([
+            'name' => $request->input('activity')
+        ]);
+
+        return redirect('/setting/activity');
     }
 
     /**

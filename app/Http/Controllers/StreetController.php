@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Street;
+use App\Models\Ward;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class LoanController extends Controller
+
+class StreetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +17,18 @@ class LoanController extends Controller
      */
     public function index()
     {
-        //
-        return view('registration.index');
+
+        $wards = DB::table('wards')
+            ->get();
+
+        $data = DB::table('wards')
+            ->join('streets', 'wards.id', '=', 'streets.ward_id')
+            ->select('wards.id as ward_id', 'wards.name as ward_name', 'streets.id as street_id', 'streets.name as street_name')
+            ->paginate(10);
+
+        return view('setting.street')
+            ->with('data', $data)
+            ->with('wards', $wards);
     }
 
     /**
@@ -36,6 +50,18 @@ class LoanController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        $request->validate([
+            'ward' => 'required|integer',
+            'street' => 'required|string'
+        ]);
+
+        Street::create([
+            'name' => $request->input('street'),
+            'ward_id' => $request->input('ward')
+        ]);
+
+        return redirect('/setting/streets');
     }
 
     /**

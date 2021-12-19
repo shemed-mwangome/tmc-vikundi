@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SettingController extends Controller
+class GroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class SettingController extends Controller
     public function index()
     {
         //
-        return view('registration.index');
+        return view('registration.all');
     }
 
     /**

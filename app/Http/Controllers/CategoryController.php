@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class RegistrationController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +14,14 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        return view('registration.index');
+
+        $category = Category::paginate(10);
+
+        return view('setting.category')
+            ->with('category', $category);
     }
 
-       /**
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -35,7 +40,20 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'category' => 'required|string'
+        ]);
+
+        Category::create([
+            'name' => $request->input('category')
+        ]);
+
+        return redirect('/setting/category');
     }
+
+
+
+
 
     /**
      * Display the specified resource.

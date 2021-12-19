@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ward;
 use Illuminate\Http\Request;
 
-class ReportController extends Controller
+class WardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,11 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
-        return view('registration.index');
+
+        // Get all ward
+
+        $wards = Ward::paginate(10);
+        return view('setting.ward')->with('wards',$wards);
     }
 
     /**
@@ -35,7 +39,19 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //    Validate input
+        $request->validate([
+            'name' => 'required|unique:wards'
+        ]);
+
+        // INsert data
+
+        Ward::create([
+            'name' => $request->input('name')
+        ]);
+
+        return redirect('/setting/wards');
+
     }
 
     /**
