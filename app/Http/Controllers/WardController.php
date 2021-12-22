@@ -18,7 +18,14 @@ class WardController extends Controller
         // Get all ward
 
         $wards = Ward::paginate(10);
-        return view('setting.ward')->with('wards',$wards);
+        return view('setting.ward')->with('wards', $wards);
+    }
+
+    public function fetch_wards()
+    {
+
+        $wards = Ward::all();
+        return response()->json($wards);
     }
 
     /**
@@ -50,8 +57,7 @@ class WardController extends Controller
             'name' => $request->input('name')
         ]);
 
-        return redirect('/setting/wards');
-
+        return redirect('/wards');
     }
 
     /**

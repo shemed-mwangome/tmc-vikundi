@@ -46,7 +46,7 @@ class ActivityController extends Controller
             'name' => $request->input('activity')
         ]);
 
-        return redirect('/setting/activity');
+        return redirect('/activity');
     }
 
     /**

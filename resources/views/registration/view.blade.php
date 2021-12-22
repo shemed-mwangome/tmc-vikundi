@@ -102,17 +102,7 @@
                         </a>
 
                     </div>
-                    <div class="">
-                        <a href="/registration/new"
-                            class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                            <span class="text-xs">New </span>
-                        </a>
-                    </div>
+
                     <div class="">
                         <a href="/registration/uploads"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
@@ -316,29 +306,29 @@
                 </div>
             </div>
         </div>
+    </div>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const btn_toggle_nav = document.querySelector(".toggle-avatar-nav");
+            const avatar_nav = document.querySelector(".avatar-nav");
+            const btn_toggle_sidenav = document.querySelector('.toggle-sidenav');
+            const sidenav = document.querySelector('.sidenav');
 
-        <script>
-            window.addEventListener("DOMContentLoaded", () => {
-                const btn_toggle_nav = document.querySelector(".toggle-avatar-nav");
-                const avatar_nav = document.querySelector(".avatar-nav");
-                const btn_toggle_sidenav = document.querySelector('.toggle-sidenav');
-                const sidenav = document.querySelector('.sidenav');
 
 
+            const toggleRightNav = () => {
+                avatar_nav.classList.toggle("hidden")
+            }
 
-                const toggleRightNav = () => {
-                    avatar_nav.classList.toggle("hidden")
-                }
+            const toggleSideNav = () => {
+                sidenav.classList.toggle("-translate-x-full")
+                sidenav.classList.toggle("hidden")
+            }
 
-                const toggleSideNav = () => {
-                    sidenav.classList.toggle("-translate-x-full")
-                    sidenav.classList.toggle("hidden")
-                }
-
-                btn_toggle_nav.addEventListener("click", toggleRightNav);
-                btn_toggle_sidenav.addEventListener("click", toggleSideNav);
-            })
-        </script>
+            btn_toggle_nav.addEventListener("click", toggleRightNav);
+            btn_toggle_sidenav.addEventListener("click", toggleSideNav);
+        })
+    </script>
 
 </body>
 

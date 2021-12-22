@@ -81,7 +81,7 @@
                 </div>
                 <nav class="text-gray-100 font-bold">
                     <div>
-                        <a href="/setting/dashboard"
+                        <a href="/setting"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -323,47 +323,54 @@
 
     </div>
 
-   <script>
-    window.addEventListener("DOMContentLoaded", () => {
-        const btn_toggle_nav = document.querySelector(".toggle-avatar-nav");
-        const avatar_nav = document.querySelector(".avatar-nav");
-        const btn_toggle_sidenav = document.querySelector('.toggle-sidenav');
-        const sidenav = document.querySelector('.sidenav');
-        const mainContent = document.querySelector('.main_content');
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const btn_toggle_nav = document.querySelector(".toggle-avatar-nav");
+            const avatar_nav = document.querySelector(".avatar-nav");
+            const btn_toggle_sidenav = document.querySelector('.toggle-sidenav');
+            const sidenav = document.querySelector('.sidenav');
+            const mainContent = document.querySelector('.main_content');
 
 
-        {{-- modal --}}
-        const modalWrapper = document.querySelector('.modal-wrapper');
-        const modal = document.querySelector('.modal');
-        const modalBtn = document.querySelector('.modal-btn');
-        const closeModalBtn = document.querySelector('.close-modal');
+            {{-- modal --}}
+            const modalWrapper = document.querySelector('.modal-wrapper');
+            const modal = document.querySelector('.modal');
+            const modalBtn = document.querySelector('.modal-btn');
+            const closeModalBtn = document.querySelector('.close-modal');
 
-        const showModal = (e) => {
-            console.log(e)
-            modal.classList.toggle('hidden')
-        }
+            const showModal = (e) => {
+                console.log(e)
+                modal.classList.toggle('hidden')
+            }
 
-         const closeModal = () => {
-            modal.classList.toggle('hidden')
-        }
+            const closeModal = () => {
+                modal.classList.toggle('hidden')
+            }
 
 
-        const toggleRightNav = () => {
-            avatar_nav.classList.toggle("hidden")
-        }
+            const toggleRightNav = () => {
+                avatar_nav.classList.toggle("hidden")
+            }
 
-        const toggleSideNav = () => {
-            sidenav.classList.toggle("-translate-x-full")
-            sidenav.classList.toggle("hidden")
+            const toggleSideNav = () => {
+                sidenav.classList.toggle("-translate-x-full")
+                sidenav.classList.toggle("hidden")
 
-        }
+            }
 
-        btn_toggle_nav.addEventListener("click", toggleRightNav);
-        btn_toggle_sidenav.addEventListener("click", toggleSideNav);
-        modalBtn.addEventListener("click", showModal)
-        closeModalBtn.addEventListener("click", closeModal)
-    })
-</script>
+            //fetch mtaa
+            async function fetchStreet(){
+                let response = await fetch('/')
+            }
+
+
+
+            btn_toggle_nav.addEventListener("click", toggleRightNav);
+            btn_toggle_sidenav.addEventListener("click", toggleSideNav);
+            modalBtn.addEventListener("click", showModal)
+            closeModalBtn.addEventListener("click", closeModal)
+        })
+    </script>
 
 
 </body>

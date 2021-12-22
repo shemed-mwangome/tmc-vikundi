@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Street;
 
 class GroupController extends Controller
 {
@@ -13,8 +14,8 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
-        return view('registration.all');
+        $streets = Street::all();
+        return view('registration.all')->with('streets', $streets->toJson());
     }
 
     /**
@@ -46,7 +47,7 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('registration.view');
     }
 
     /**
@@ -57,7 +58,7 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('registration.all');
     }
 
     /**

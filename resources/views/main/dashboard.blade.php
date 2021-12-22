@@ -71,7 +71,7 @@
                         <i class="fas fa-users " aria-hidden="true"></i>
                     </div>
                     <div>
-                        <a href="/registration/dashboard"
+                        <a href="/registration"
                             class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Registration
                         </a>
                     </div>
@@ -107,7 +107,7 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <div>
-                        <a href="/setting/dashboard"
+                        <a href="/setting"
                             class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Settings</a>
                     </div>
                 </div>

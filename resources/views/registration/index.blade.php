@@ -82,7 +82,7 @@
 
                 <nav class="text-gray-100 font-bold">
                     <div>
-                        <a href="/registration/dashboard"
+                        <a href="/registration"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -93,7 +93,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="/registration/all"
+                        <a href="/groups"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -104,19 +104,9 @@
                         </a>
 
                     </div>
+
                     <div class="">
-                        <a href="/registration/new"
-                            class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                            <span class="text-xs">New </span>
-                        </a>
-                    </div>
-                    <div class="">
-                        <a href="/registration/uploads"
+                        <a href="/attachments"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -126,7 +116,7 @@
                             <span class="text-xs">Attachments</span>
                         </a>
                     </div>
-                    <div class="">
+                    {{--  <div class="">
                         <a href="/registration/certificate"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -136,10 +126,10 @@
                             </svg>
                             <span class="text-xs">Certificates</span>
                         </a>
-                    </div>
+                    </div>  --}}
 
                     <div>
-                        <a href="/registration/report"
+                        <a href="/reports"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\AttachmentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LoanController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StreetController;
 use App\Http\Controllers\WardController;
+use App\Models\Ward;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +39,6 @@ Route::get('/registration/dashboard', [PagesController::class, 'reg_dashboard'])
 Route::get('/registration/all', [PagesController::class, 'reg_all']);
 Route::get('/registration/view', [PagesController::class, 'reg_view']);
 Route::get('/registration/search', [PagesController::class, 'reg_search']);
-Route::get('/registration/new', [PagesController::class, 'reg_new']);
 Route::get('/registration/uploads', [PagesController::class, 'reg_uploads']);
 Route::get('/registration/certificate', [PagesController::class, 'reg_certificate']);
 Route::get('/registration/report', [PagesController::class, 'reg_report']);
@@ -45,27 +46,18 @@ Route::get('/registration/member', [PagesController::class, 'reg_member']);
 Route::get('/registration/attach', [PagesController::class, 'reg_attach']);
 
 
-// Setting
-Route::get('/setting/dashboard', [PagesController::class, 'set_dashboard']);
-Route::get('/setting/ward', [PagesController::class, 'set_ward']);
-Route::get('/setting/street', [PagesController::class, 'set_street']);
-Route::get('/setting/activity', [PagesController::class, 'set_activity']);
-Route::get('/setting/category', [PagesController::class, 'set_category']);
-Route::get('/setting/user', [PagesController::class, 'set_user']);
+Route::get('/registration', [RegistrationController::class, 'index']);
+Route::get('/setting', [SettingController::class, 'index']);
 
-
-
-
-
-
-
-
-
+Route::get('/fetch_wards', [WardController::class, 'fetch_wards']);
+Route::get('/fetch_streets/{id}', [StreetController::class, 'fetch_streets']);
 // Controller resources
 
 
-Route::resource('/setting/wards', WardController::class);
-Route::resource('/setting/streets', StreetController::class);
-Route::resource('/setting/activity', ActivityController::class);
-Route::resource('/setting/category', CategoryController::class);
-Route::resource('/registration/groups', GroupController::class);
+Route::resource('wards', WardController::class);
+Route::resource('streets', StreetController::class);
+Route::resource('activity', ActivityController::class);
+Route::resource('category', CategoryController::class);
+Route::resource('groups', GroupController::class);
+Route::resource('attachments', AttachmentController::class);
+Route::resource('reports', ReportController::class);

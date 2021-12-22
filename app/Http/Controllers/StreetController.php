@@ -31,6 +31,13 @@ class StreetController extends Controller
             ->with('wards', $wards);
     }
 
+    public function fetch_streets($id)
+    {
+        $streets = Street::where('ward_id', '=', $id)
+            ->get();
+        return response()->json($streets);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -61,7 +68,7 @@ class StreetController extends Controller
             'ward_id' => $request->input('ward')
         ]);
 
-        return redirect('/setting/streets');
+        return redirect('/streets');
     }
 
     /**

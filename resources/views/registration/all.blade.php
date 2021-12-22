@@ -8,7 +8,6 @@
     <title>{{ config('app.name', 'TMC-VIKUNDI') }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('js/jquery.js') }}">
     <link rel="shortcut icon" href="{{ asset('images/coat_of_arms.png') }}" type="image/x-icon">
 </head>
 
@@ -42,15 +41,16 @@
             <div class="right-nav flex justify-between items-center  space-x-6 relative">
                 <span class="font-bold text-white uppercase text-sm">Selemani Hemed</span>
                 <div class="relative">
-                    <button class="toggle-avatar-nav bg-gray-200 rounded-full overflow-hidden p-1 hover:bg-gray-300 ">
+                    <button id="toggle-top-nav"
+                        class=" bg-gray-200 rounded-full overflow-hidden p-1 hover:bg-gray-300 ">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 object-cover" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                     </button>
-                    <nav
-                        class="avatar-nav w-52 bg-green-600 text-gray-100 absolute right-0 my-2 text-sm hidden space-y-1 overflow-hidden rounded-sm transition duration-500 ease-in-out shadow-xl">
+                    <nav id="top-nav"
+                        class=" hidden w-52 bg-green-600 text-gray-100 absolute right-0 my-2 text-sm  space-y-1 overflow-hidden rounded-sm transition duration-500 ease-in-out shadow-xl">
                         <a href="#" class="block px-3 py-2 hover:bg-gray-500 hover:text-gray-200">My Account</a>
                         <a href="{{ route('logout') }}"
                             class="block px-3 py-2 hover:bg-gray-500 hover:text-gray-200">Logout</a>
@@ -82,7 +82,7 @@
 
                 <nav class="text-gray-100 font-bold">
                     <div>
-                        <a href="/registration/dashboard"
+                        <a href="/registration"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -93,7 +93,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="/registration/all"
+                        <a href="/groups"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -105,18 +105,7 @@
 
                     </div>
                     <div class="">
-                        <a href="/registration/new"
-                            class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                            </svg>
-                            <span class="text-xs">New </span>
-                        </a>
-                    </div>
-                    <div class="">
-                        <a href="/registration/uploads"
+                        <a href="/attachments"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -126,7 +115,7 @@
                             <span class="text-xs">Attachments</span>
                         </a>
                     </div>
-                    <div class="">
+                    {{-- <div class="">
                         <a href="/registration/certificate"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -136,10 +125,10 @@
                             </svg>
                             <span class="text-xs">Certificates</span>
                         </a>
-                    </div>
+                    </div> --}}
 
                     <div>
-                        <a href="/registration/report"
+                        <a href="/reports"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -149,17 +138,7 @@
                             <span class="text-xs">Reports</span>
                         </a>
                     </div>
-                    <div>
-                        {{-- <a href="/logout"
-            class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            </svg>
-            <span class="text-xs">Logout</span>
-        </a> --}}
-                    </div>
+
                 </nav>
                 {{-- end links --}}
 
@@ -178,7 +157,18 @@
                         </div>
                         <div class="bg-white rounded-sm ">
                             <div class="p-4 bg-white">
-                                <div>
+                                <div class="flex justify-between">
+                                    <div>
+                                        <button id="show-modal"
+                                            class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white flex space-x-3">
+                                            <span>Add</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                     <form action="" class=" flex items-center justify-center space-x-4">
                                         <div>
                                             <input type="text" name="search" id="search" class="w-80 text-sm"
@@ -200,7 +190,115 @@
                                 </div>
                             </div>
 
+                            {{-- Overlay Effect --}}
+                            <div class="fixed hidden inset-0 bg-gray-600 bg-opacity-80 overflow-y-auto h-full w-full transition duration-100 ease-in-out"
+                                id="registration-modal">
+
+                                {{-- modal content --}}
+
+                                <div
+                                    class="relative top-20 mx-auto bg-white shadow-xl max-w-xl  rounded-lg overflow-clip">
+                                    <div class="bg-sky-700 p-5 overflow-clip">
+                                        <h1 class="text-white font-bold uppercase">SAJILI KIKUNDI</h1>
+                                    </div>
+                                    <div class="px-8 py-4 bg-white  ">
+                                        <form action="" class="space-y-5">
+                                            <div class="flex items-center space-x-4">
+                                                <label for="group_name"
+                                                    class="w-1/3 inline-block min-w-max font-bold text-right text-sm ">Jina
+                                                    la
+                                                    Kikundi</label>
+                                                <input type="text" name="group_name" id="group_name"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300  outline-none  focus:ring-0 focus:border-gray-500"
+                                                    placeholder="Jina la Kikundi">
+                                            </div>
+                                            <div class="flex items-center space-x-4">
+                                                <label for="ward"
+                                                    class="inline-block min-w-max  w-1/3 font-bold text-right text-sm ">Kata</label>
+                                                <select name="ward_name" id="ward_name"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300 outline-none focus:ring-0 focus:border-gray-500">
+                                                    <option value="" selected disabled>Chagua...</option>
+                                                </select>
+                                            </div>
+                                            <div class="flex items-center space-x-4">
+                                                <label for="street"
+                                                    class="inline-block min-w-max  w-1/3 font-bold text-right text-sm ">Mtaa</label>
+                                                <select name="street_name" id="street_name"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300 outline-none focus:ring-0 focus:border-gray-500">
+                                                    <option value="" selected disabled>Chagua...</option>
+                                                </select>
+                                            </div>
+                                            <div class="flex items-center space-x-4">
+                                                <label for="group_category"
+                                                    class="inline-block min-w-max  w-1/3 font-bold text-right text-sm ">Aina
+                                                    ya Kikundi</label>
+                                                <select name="group_category" id="group_category"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300 outline-none focus:ring-0 focus:border-gray-500">
+                                                    <option value="">Chagua...</option>
+                                                    <option value="">Azimio</option>
+                                                    <option value="">Azimio</option>
+                                                    <option value="">Azimio</option>
+                                                </select>
+                                            </div>
+                                            <div class="flex items-center space-x-4">
+                                                <label for="group_activity"
+                                                    class="inline-block min-w-max  w-1/3 font-bold text-right text-sm ">Shughuli
+                                                    ya Kikundi</label>
+                                                <select name="group_activity" id="group_activity"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300 outline-none focus:ring-0 focus:border-gray-500">
+                                                    <option value="">Chagua...</option>
+                                                    <option value="">Azimio</option>
+                                                    <option value="">Azimio</option>
+                                                    <option value="">Azimio</option>
+                                                </select>
+                                            </div>
+                                            <div class="flex items-center space-x-4">
+                                                <label for="payment_no"
+                                                    class="w-1/3 inline-block min-w-max font-bold text-right text-sm ">Namba
+                                                    ya Malipo</label>
+                                                <input type="text" name="payment_no" id="payment_no"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300  outline-none  focus:ring-0 focus:border-gray-500"
+                                                    placeholder="Namba ya Malipo">
+                                            </div>
+                                            <div class="flex items-center space-x-4">
+                                                <label for="payment_date"
+                                                    class="w-1/3 inline-block min-w-max font-bold text-right text-sm ">Tarehe
+                                                    ya Malipo</label>
+                                                <input type="date" name="payment_no" id="payment_no"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300  outline-none  focus:ring-0 focus:border-gray-500">
+                                            </div>
+
+                                            <div class="flex space-x-3 justify-end">
+                                                <button type="submit"
+                                                    class="px-4 py-2 flex items-center space-x-3 bg-sky-600 hover:bg-sky-700 text-white shadow">
+                                                    <span>Save</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+                                                    </svg>
+                                                </button>
+                                                <button id="close-modal"
+                                                    class="px-4 py-2 flex items-center space-x-3 bg-red-600 hover:bg-red-700 text-white shadow">
+                                                    <span>Close</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+
+                            </div>
                         </div>
+
+                        {{-- table --}}
                         <div class="pb-4 bg-white w-full">
                             <table class="w-full text-center">
                                 <thead class="bg-gray-300 divide-y divide-gray-500">
@@ -220,7 +318,7 @@
                                         <td class="px-6 py-2 text-xs">10</td>
                                         <td class="px-6 py-2 text-xs flex space-x-4 justify-between">
 
-                                            <a href="/registration/view" title="view">
+                                            <a href="/groups/{id}" title="view" id="view-link">
 
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-600"
                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -231,7 +329,7 @@
                                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                 </svg>
                                             </a>
-                                            <a href="/registration/new" title="edit">
+                                            <a href="/groups/{id}/edit" title="edit" id="edit-link">
 
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600"
                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -242,35 +340,7 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr class="whitespace-nowrap align-baseline">
-                                        <td class="px-6 py-2 text-xs">Tupendane Empowerment</td>
-                                        <td class="px-6 py-2 text-xs">TMC/2030/202</td>
-                                        <td class="px-6 py-2 text-xs">19/1/2017</td>
-                                        <td class="px-6 py-2 text-xs">10</td>
-                                        <td class="px-6 py-2 text-xs flex space-x-4 justify-between">
 
-                                            <a href="/registration/view" title="view">
-
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-600"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </a>
-                                            <a href="/registration/new" title="edit">
-
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                </svg>
-                                            </a>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
                             {{-- pagination here --}}
@@ -283,29 +353,68 @@
 
 
         </div>
+    </div>
+    <script src="{{ asset('js/jquery.js') }}"></script>
 
-        <script>
-            window.addEventListener("DOMContentLoaded", () => {
-                const btn_toggle_nav = document.querySelector(".toggle-avatar-nav");
-                const avatar_nav = document.querySelector(".avatar-nav");
-                const btn_toggle_sidenav = document.querySelector('.toggle-sidenav');
-                const sidenav = document.querySelector('.sidenav');
+    <script>
+        $(document).ready(function() {
 
 
+            fetchWards();
+            fetchStreets();
 
-                const toggleRightNav = () => {
-                    avatar_nav.classList.toggle("hidden")
-                }
+            function fetchWards() {
+                $.ajax({
+                    type: "GET",
+                    url: "/fetch_wards",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data)
+                        let option = ``;
 
-                const toggleSideNav = () => {
-                    sidenav.classList.toggle("-translate-x-full")
-                    sidenav.classList.toggle("hidden")
-                }
+                        data.forEach(item => {
+                            option += `<option value="${item.id}">${item.name}</option>`;
+                        })
 
-                btn_toggle_nav.addEventListener("click", toggleRightNav);
-                btn_toggle_sidenav.addEventListener("click", toggleSideNav);
+                        $("#ward_name").append(option)
+                    }
+                })
+            }
+
+            function fetchStreets() {
+
+               
+            }
+
+            //toggle avatar nav
+            $("#toggle-top-nav").click(function() {
+                $("#top-nav").toggle();
             })
-        </script>
+
+            // toggle sidebar
+            $(".toggle-sidenav").click(function() {
+                $(".sidenav").toggle();
+            })
+
+            //show modal
+            $("#show-modal").click(function() {
+                $("#registration-modal").show();
+            })
+
+            //close modal
+            $("#close-modal").click(function() {
+                $("#registration-modal").hide();
+            })
+            //show edit modal
+            $("#edit-link").click(function(e) {
+                e.preventDefault();
+                $("#registration-modal").show();
+            })
+
+
+
+        });
+    </script>
 
 </body>
 

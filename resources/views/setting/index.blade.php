@@ -83,7 +83,7 @@
 
                 <nav class="text-gray-100 font-bold">
                     <div>
-                        <a href="/setting/dashboard"
+                        <a href="/setting"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -94,7 +94,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="/setting/wards"
+                        <a href="/wards"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -108,7 +108,7 @@
 
                     </div>
                     <div class="">
-                        <a href="/setting/streets"
+                        <a href="/streets"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -121,7 +121,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="/setting/activity"
+                        <a href="/activity"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -134,7 +134,7 @@
                         </a>
                     </div>
                     <div class="">
-                        <a href="/setting/category"
+                        <a href="/category"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -148,7 +148,7 @@
                     </div>
 
                     <div>
-                        <a href="/setting/user"
+                        <a href="/user"
                             class="flex items-center align-baseline px-4 py-2 transition duration-200 ease-in-out hover:bg-gray-900 space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
