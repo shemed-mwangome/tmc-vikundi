@@ -17,9 +17,9 @@ class CreateGroupsTable extends Migration
             $table->increments('id');
             $table->string('reg_no')->unique();
             $table->string('name');
-            $table->date('constitution_submission_date');
-            $table->timestamp('date_of_registration');
-            $table->integer('total_members');
+            $table->timestamp('reg_date');
+            $table->date('attachment_date');
+            $table->integer('total_members')->default(0);
             $table->unsignedInteger('activity_id');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('ward_id');

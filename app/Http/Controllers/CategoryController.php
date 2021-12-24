@@ -21,6 +21,13 @@ class CategoryController extends Controller
             ->with('category', $category);
     }
 
+    public function fetch_category()
+    {
+
+        $category = Category::all();
+        return response()->json($category);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -13,5 +13,5 @@ class Group extends Model
     protected $primaryKey = "id";
     public $timestamps = false;
 
-    // protected $fillable = [''];
+    protected $fillable = [''];
 }

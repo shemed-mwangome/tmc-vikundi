@@ -8,6 +8,7 @@
     <title>{{ config('app.name', 'TMC-VIKUNDI') }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('jquery-ui/jquery-ui.min.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/coat_of_arms.png') }}" type="image/x-icon">
 </head>
 
@@ -198,11 +199,20 @@
 
                                 <div
                                     class="relative top-20 mx-auto bg-white shadow-xl max-w-xl  rounded-lg overflow-clip">
-                                    <div class="bg-sky-700 p-5 overflow-clip">
+                                    {{-- <div class="bg-sky-700 p-5 overflow-clip">
                                         <h1 class="text-white font-bold uppercase">SAJILI KIKUNDI</h1>
-                                    </div>
+                                    </div> --}}
+                                    <a href=""
+                                        class="close-modal absolute top-4 right-4 text-gray-700 hover:text-gray-900 outline-2 outline-gray-900 ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </a>
                                     <div class="px-8 py-4 bg-white  ">
-                                        <form action="" class="space-y-5">
+                                        <form action="" class="space-y-5" name="registerKikundi">
+                                            @csrf
                                             <div class="flex items-center space-x-4">
                                                 <label for="group_name"
                                                     class="w-1/3 inline-block min-w-max font-bold text-right text-sm ">Jina
@@ -229,28 +239,30 @@
                                                 </select>
                                             </div>
                                             <div class="flex items-center space-x-4">
-                                                <label for="group_category"
+                                                <label for="category_name"
                                                     class="inline-block min-w-max  w-1/3 font-bold text-right text-sm ">Aina
                                                     ya Kikundi</label>
-                                                <select name="group_category" id="group_category"
+                                                <select name="category_name" id="category_name"
                                                     class="flex-1 text-sm border-0 border-b-2 border-gray-300 outline-none focus:ring-0 focus:border-gray-500">
                                                     <option value="">Chagua...</option>
-                                                    <option value="">Azimio</option>
-                                                    <option value="">Azimio</option>
-                                                    <option value="">Azimio</option>
                                                 </select>
                                             </div>
                                             <div class="flex items-center space-x-4">
-                                                <label for="group_activity"
+                                                <label for="activity_name"
                                                     class="inline-block min-w-max  w-1/3 font-bold text-right text-sm ">Shughuli
                                                     ya Kikundi</label>
-                                                <select name="group_activity" id="group_activity"
+                                                <select name="activity_name" id="activity_name"
                                                     class="flex-1 text-sm border-0 border-b-2 border-gray-300 outline-none focus:ring-0 focus:border-gray-500">
                                                     <option value="">Chagua...</option>
-                                                    <option value="">Azimio</option>
-                                                    <option value="">Azimio</option>
-                                                    <option value="">Azimio</option>
                                                 </select>
+                                            </div>
+                                            <div class="flex items-center space-x-4">
+                                                <label for="attachment_date"
+                                                    class="w-1/3 inline-block min-w-max font-bold text-right text-sm ">Tarehe
+                                                    ya Kuleta Katiba</label>
+                                                <input type="text" name="attachment_date" id="attachment_date"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300  outline-none  focus:ring-0 focus:border-gray-500"
+                                                    placeholder="Weka Tarehe ya Kuleta Katiba">
                                             </div>
                                             <div class="flex items-center space-x-4">
                                                 <label for="payment_no"
@@ -264,8 +276,9 @@
                                                 <label for="payment_date"
                                                     class="w-1/3 inline-block min-w-max font-bold text-right text-sm ">Tarehe
                                                     ya Malipo</label>
-                                                <input type="date" name="payment_no" id="payment_no"
-                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300  outline-none  focus:ring-0 focus:border-gray-500">
+                                                <input type="text" name="payment_date" id="payment_date"
+                                                    class="flex-1 text-sm border-0 border-b-2 border-gray-300  outline-none  focus:ring-0 focus:border-gray-500"
+                                                    placeholder="Weka Tarehe ya Malipo">
                                             </div>
 
                                             <div class="flex space-x-3 justify-end">
@@ -279,8 +292,8 @@
                                                             d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
                                                     </svg>
                                                 </button>
-                                                <button id="close-modal"
-                                                    class="px-4 py-2 flex items-center space-x-3 bg-red-600 hover:bg-red-700 text-white shadow">
+                                                <button id=""
+                                                    class="close-modal px-4 py-2 flex items-center space-x-3 bg-red-600 hover:bg-red-700 text-white shadow">
                                                     <span>Close</span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -331,8 +344,9 @@
                                             </a>
                                             <a href="/groups/{id}/edit" title="edit" id="edit-link">
 
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
                                                         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -355,13 +369,16 @@
         </div>
     </div>
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('jquery-ui/jquery-ui.js') }}"></script>
 
     <script>
         $(document).ready(function() {
 
 
             fetchWards();
-            fetchStreets();
+            fetchActivity();
+            fetchCategory();
+
 
             function fetchWards() {
                 $.ajax({
@@ -369,7 +386,6 @@
                     url: "/fetch_wards",
                     dataType: "json",
                     success: function(data) {
-                        console.log(data)
                         let option = ``;
 
                         data.forEach(item => {
@@ -381,10 +397,63 @@
                 })
             }
 
-            function fetchStreets() {
+            function fetchStreets($id) {
+                $("#street_name").val = ""
 
-               
+                let id = $id
+                $.ajax({
+                        type: "GET",
+                        url: `/fetch_streets/${id}`,
+                        dataType: "json",
+                        data: {
+                            'id': $id
+                        }
+                    })
+                    .done(function(data) {
+                        let option = `<option value="" selected disabled>Chagua...</option>`
+
+                        data.forEach(street => {
+                            option += `<option value="${street.id}">${street.name}</option>`;
+                        })
+
+                        $("#street_name").empty().append(option)
+                    });
             }
+
+            function fetchActivity() {
+                $.ajax({
+                    type: "GET",
+                    url: "/fetch_activity",
+                    dataType: "json",
+                    success: function(data) {
+                        let option = ``;
+
+                        data.forEach(item => {
+                            option += `<option value="${item.id}">${item.name}</option>`;
+                        })
+
+                        $("#activity_name").append(option)
+                    }
+                })
+            }
+
+            function fetchCategory() {
+                $.ajax({
+                    type: "GET",
+                    url: "/fetch_category",
+                    dataType: "json",
+                    success: function(data) {
+                        let option = ``;
+
+                        data.forEach(item => {
+                            option += `<option value="${item.id}">${item.name}</option>`;
+                        })
+
+                        $("#category_name").append(option)
+                    }
+                })
+            }
+
 
             //toggle avatar nav
             $("#toggle-top-nav").click(function() {
@@ -402,7 +471,7 @@
             })
 
             //close modal
-            $("#close-modal").click(function() {
+            $(".close-modal").click(function() {
                 $("#registration-modal").hide();
             })
             //show edit modal
@@ -411,7 +480,19 @@
                 $("#registration-modal").show();
             })
 
+            $("#ward_name").change(function() {
+                let ward_id = $(this).val();
+                fetchStreets(ward_id);
+            })
 
+            $("#payment_date").datepicker({
+                dateFormat: "dd-mm-yy",
+                maxDate : 0
+            });
+            $("#attachment_date").datepicker({
+                dateFormat: "dd-mm-yy",
+                maxDate : 0
+            });
 
         });
     </script>

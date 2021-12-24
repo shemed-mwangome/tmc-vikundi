@@ -20,6 +20,13 @@ class ActivityController extends Controller
         return view('setting.activity')->with('activity', $activity);
     }
 
+
+    public function fetch_activity()
+    {
+
+        $activity = activity::all();
+        return response()->json($activity);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -51,6 +51,10 @@ Route::get('/setting', [SettingController::class, 'index']);
 
 Route::get('/fetch_wards', [WardController::class, 'fetch_wards']);
 Route::get('/fetch_streets/{id}', [StreetController::class, 'fetch_streets']);
+Route::get('/fetch_category', [CategoryController::class, 'fetch_category']);
+Route::get('/fetch_activity', [ActivityController::class, 'fetch_activity']);
+
+
 // Controller resources
 
 
