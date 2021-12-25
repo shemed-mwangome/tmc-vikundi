@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
     <link rel="shortcut icon" href="{{ asset('images/coat_of_arms.png') }}" type="image/x-icon">
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('jquery-ui/jquery-ui.js') }}"></script>
 </head>
 
 <body>
