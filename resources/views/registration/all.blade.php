@@ -199,9 +199,6 @@
 
                                 <div
                                     class="relative top-20 mx-auto bg-white shadow-xl max-w-xl  rounded-lg overflow-clip">
-                                    {{-- <div class="bg-sky-700 p-5 overflow-clip">
-                                        <h1 class="text-white font-bold uppercase">SAJILI KIKUNDI</h1>
-                                    </div> --}}
                                     <a href=""
                                         class="close-modal absolute top-4 right-4 text-gray-700 hover:text-gray-900 outline-2 outline-gray-900 ">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -211,7 +208,7 @@
                                         </svg>
                                     </a>
                                     <div class="px-8 py-4 bg-white  ">
-                                        <form action="" class="space-y-5" name="registerKikundi">
+                                        <form action="" class="space-y-4" name="registerKikundi">
                                             @csrf
                                             <div class="flex items-center space-x-4">
                                                 <label for="group_name"
@@ -487,11 +484,11 @@
 
             $("#payment_date").datepicker({
                 dateFormat: "dd-mm-yy",
-                maxDate : 0
+                maxDate: 0
             });
             $("#attachment_date").datepicker({
                 dateFormat: "dd-mm-yy",
-                maxDate : 0
+                maxDate: 0
             });
 
         });

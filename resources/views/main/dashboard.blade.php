@@ -71,7 +71,7 @@
                         <i class="fas fa-users " aria-hidden="true"></i>
                     </div>
                     <div>
-                        <a href="/registration"
+                        <a href="/register"
                             class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Registration
                         </a>
                     </div>
@@ -89,7 +89,7 @@
                     <div class="text-white p-8 flex items-center justify-center text-5xl"><i
                             class="fas fa-hand-holding-usd"></i></div>
                     <div>
-                        <a href="/accounting"
+                        <a href="/accounts"
                             class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Accounts</a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                         <i class="fas fa-file-invoice"></i>
                     </div>
                     <div>
-                        <a href="/reporting"
+                        <a href="/reports"
                             class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Reports</a>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <div>
-                        <a href="/setting"
+                        <a href="/settings"
                             class="flex items-center justify-center w-full p-8 bg-green-700 uppercase font-bold text-gray-100">Settings</a>
                     </div>
                 </div>

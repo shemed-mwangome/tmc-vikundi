@@ -1,4 +1,3 @@
-{{-- top navigation bar --}}
 <div class="top-nav sticky top-0 bg-green-600 py-4 px-6 flex justify-between z-50 shadow-md border-b-4 border-gray-700">
 
     {{-- left side --}}
@@ -40,4 +39,3 @@
 
     {{-- end right side --}}
 </div>
-{{-- end top navigation --}}

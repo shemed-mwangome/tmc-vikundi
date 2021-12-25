@@ -142,6 +142,49 @@ class StreetSeeder extends Seeder
             ['name' => "Kibondemaji B", 'ward_id' => 17],
 
 
+            ['name' => "Mponda", 'ward_id' => 18],
+            ['name' => "Majimatitu A", 'ward_id' => 18],
+            ['name' => "Machinjioni", 'ward_id' => 18],
+            ['name' => "Mianzini", 'ward_id' => 18],
+
+            ['name' => "Majimatitu C", 'ward_id' => 19],
+            ['name' => "Kibondemaji A", 'ward_id' => 19],
+            ['name' => "Mchikichini", 'ward_id' => 19],
+            ['name' => "Kimbangulile", 'ward_id' => 19],
+
+            ['name' => "Mwanamtoti", 'ward_id' => 20],
+            ['name' => "Mtoni Kijichi", 'ward_id' => 20],
+            ['name' => "Misheni", 'ward_id' => 20],
+            ['name' => "Butiama", 'ward_id' => 20],
+            ['name' => "Mgeninani", 'ward_id' => 20],
+
+            ['name' => "Kiburugwa", 'ward_id' => 21],
+            ['name' => "Kiburugwa 3", 'ward_id' => 21],
+            ['name' => "Barabara ya Mwinyi", 'ward_id' => 21],
+            ['name' => "Juhudi", 'ward_id' => 21],
+            ['name' => "Kingugi", 'ward_id' => 21],
+            ['name' => "Kwanyoka", 'ward_id' => 21],
+
+            ['name' => "Kongowe", 'ward_id' => 22],
+            ['name' => "Ponde", 'ward_id' => 21],
+            ['name' => "Changanyikeni", 'ward_id' => 22],
+            ['name' => "Masaki", 'ward_id' => 22],
+            ['name' => "Goroka A", 'ward_id' => 22],
+            ['name' => "Goroka B", 'ward_id' => 22],
+            ['name' => "Vikunai", 'ward_id' => 22],
+            ['name' => "Masuliza", 'ward_id' => 22],
+            ['name' => "Mwapemba", 'ward_id' => 22],
+            ['name' => "Malela", 'ward_id' => 22],
+            ['name' => "Mzinga A", 'ward_id' => 22],
+            ['name' => "Mzinga B", 'ward_id' => 22],
+            ['name' => "Toangoma", 'ward_id' => 22],
+            ['name' => "Mikwambe", 'ward_id' => 22],
+
+            ['name' => "Kurasini Mjimpya", 'ward_id' => 23],
+            ['name' => "Rangitatu", 'ward_id' => 23],
+            ['name' => "Nzasa B", 'ward_id' => 23],
+            ['name' => "Machinjioni A", 'ward_id' => 23],
+
 
         ];
         Street::insert($streets);

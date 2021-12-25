@@ -4,14 +4,18 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AttachmentController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LoanController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StreetController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WardController;
 use App\Models\Ward;
 
@@ -26,28 +30,16 @@ use App\Models\Ward;
 |
 */
 
-Route::get('/', [PagesController::class, 'index']);
-
-Route::get('/login', [PagesController::class, 'login']);
-Route::get('/dashboard', [PagesController::class, 'dashboard']);
-
-
-Route::get('logout', [PagesController::class, 'logout'])->name('logout');
-
-// Registrations
-Route::get('/registration/dashboard', [PagesController::class, 'reg_dashboard']);
-Route::get('/registration/all', [PagesController::class, 'reg_all']);
-Route::get('/registration/view', [PagesController::class, 'reg_view']);
-Route::get('/registration/search', [PagesController::class, 'reg_search']);
-Route::get('/registration/uploads', [PagesController::class, 'reg_uploads']);
-Route::get('/registration/certificate', [PagesController::class, 'reg_certificate']);
-Route::get('/registration/report', [PagesController::class, 'reg_report']);
-Route::get('/registration/member', [PagesController::class, 'reg_member']);
-Route::get('/registration/attach', [PagesController::class, 'reg_attach']);
+Route::get('/', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'login']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('home');
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 
-Route::get('/registration', [RegistrationController::class, 'index']);
-Route::get('/setting', [SettingController::class, 'index']);
+Route::get('/register', [RegistrationController::class, 'index']);
+Route::get('/settings', [SettingController::class, 'index']);
+Route::get('/loans', [LoanController::class, 'index']);
+Route::get('/accounts', [AccountController::class, 'index']);
 
 Route::get('/fetch_wards', [WardController::class, 'fetch_wards']);
 Route::get('/fetch_streets/{id}', [StreetController::class, 'fetch_streets']);
@@ -65,3 +57,4 @@ Route::resource('category', CategoryController::class);
 Route::resource('groups', GroupController::class);
 Route::resource('attachments', AttachmentController::class);
 Route::resource('reports', ReportController::class);
+Route::resource('users', UserController::class);
